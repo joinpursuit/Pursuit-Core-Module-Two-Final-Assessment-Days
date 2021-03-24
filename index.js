@@ -22,10 +22,7 @@ const movieGrab = () => {
         }
         button.addEventListener('click', (e) => {
             e.preventDefault()
-            //this gives me all of the names except for one
-            console.log(movies.value)
-            //match by value=n 
-            //if n
+            movieName.textContent = movies.value
             
             
         })
