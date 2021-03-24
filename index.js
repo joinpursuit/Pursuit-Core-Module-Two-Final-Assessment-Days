@@ -39,7 +39,7 @@ async function movieGrabber (event) {
     movieTitle.textContent = selected.data.title
     releaseYear.textContent = selected.data.release_date
     movieDescription.textContent = selected.data.description
-    movieOrigTitle.innerHTML = `${selected.data.original_title} <small>is the original title of the film</small>`
+    movieOrigTitle.innerHTML = `${selected.data.original_title} <small>is the original title of the film🌈🌟</small>`
     console.log('movieGrabber is working')
 }
 
