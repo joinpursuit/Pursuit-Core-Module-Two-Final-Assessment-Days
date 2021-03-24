@@ -27,9 +27,10 @@ const movieGrab = () => {
             //if movies.value === array[i].title {year.textContent = array[i].year}
             // year.textContent = array
             for (let i = 0; i < array.length; i++) {
-                console.log(array[0].release_date)
+                
                 if (movies.value === array[i].title) {
                     year.textContent = array[i].release_date
+                    description.textContent = array[i].description
                 }
             }
         })
