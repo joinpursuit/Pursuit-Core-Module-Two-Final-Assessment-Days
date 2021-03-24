@@ -18,5 +18,8 @@ img {
 
 h1 {
     display: flex;
+    padding: 1em;
+    margin-top: 2em;
+    float: right;
     font-family: monospace;
 }
