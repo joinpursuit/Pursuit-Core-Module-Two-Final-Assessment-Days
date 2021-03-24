@@ -5,6 +5,14 @@ body{
     align-items: center;
     font-family: monospace;
 }
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+    width: 60%;
+
+}
 .header {
     background-color: skyblue;
     margin: 30px;
@@ -25,5 +33,4 @@ body{
 /* 
 To-DO
 review text input
-main area 
 media query for responsive  */
