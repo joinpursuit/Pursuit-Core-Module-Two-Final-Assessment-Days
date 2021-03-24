@@ -1,0 +1,32 @@
+body{
+    font-family: monospace;
+    background-color: lavender;
+
+}
+
+header{
+    width: 70;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    background-color: skyblue;
+    margin-bottom: 30px;
+    padding: 10px;
+    align-items: center;
+}
+
+header img{
+    height: 150px;
+}
+
+main{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+
+#textInput{
+    width: 400px;
+}
