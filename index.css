@@ -1,6 +1,9 @@
 body{
     font-family: monospace;
     background-color: lavender;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header{
@@ -12,6 +15,7 @@ header{
     margin-bottom: 30px;
     padding: 10px;
     background-color: skyblue;
+    
 }
 
 header img{
@@ -20,7 +24,6 @@ header img{
 
 main{
     width: 60%;
-    display: flex;
 }
 
 input{
