@@ -3,8 +3,23 @@ console.log("connected")
 const dropdown = document.querySelector('select')
 const subReview = document.querySelector('submit')
 const ghibliTitle = document.querySelector('h3')
-const ghibliYear = document.querySelector('yearInfo')
-const ghibliDescription = document.querySelector('dataInfo')
+const ghibliYear = document.querySelector('#yearInfo')
+const ghibliDescription = document.querySelector('#dataInfo')
+const form = document.querySelector('form')
+const display = document.querySelector('#display-info')
+
+form.addEventListener('submit', (e) => {
+   e.preventDefault()
+
+   const userInput = document.querySelector('input[type="text"]').value
+   const userComment = document.createElement('li')
+   const ul = document.querySelector('ul')
+   userComment.innerHTML = `<b>${ghibliTitle.textContent}:</b> ${userInput}`
+   ul.appendChild(userComment)
+   
+   const input = document.querySelector('input')
+   input.value = ""
+})
 
 async function allFilms() {
    
@@ -24,29 +39,14 @@ async function allFilms() {
 
       console.log(error)  
    }
-      // console.log(film.title)
-      // console.log(film.release_date)
-      // console.log(film.description)
-} 
-
-function allOptions(film) {
-   
-
-   
-showMovies.addEventListener('change', () => {
-      function showMovies() {
-         ghibliTitle.textContent = showMovies.title
-         ghibliYear.textContent = film.release_date
-         ghibliDescription.textContent = film.description
-      }
-      showMovies()
-   })
-   return movies
 }
 
-
-
-
+dropdown.addEventListener("change", async (event) => {
+   const res = await axios.get(`https://ghibliapi.herokuapp.com/films/${event.target.value}`);
+   ghibliTitle.textContent = res.data.title;
+   ghibliYear.textContent = res.data.release_date;
+   ghibliDescription.textContent = res.data.description;
+});
 
 
 
