@@ -10,11 +10,11 @@ const movieDescription= document.querySelector("#movie-description")
 
 
 
-form.addEventListener("submit", (event) => {
-    event.preventDefault();
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
     const input = document.querySelector("input[type=text]")
     const list = document.createElement("li");
-    list.innerHTML = `<b>${titleFilm.textContent}:</b> ${input.value}`;
+    list.innerHTML = `<b>${soloMovie.textContent}:</b> ${input.value}`;
     listing.appendChild(list);
     form.reset();
   });
