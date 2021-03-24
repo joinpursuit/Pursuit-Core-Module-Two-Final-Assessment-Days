@@ -17,15 +17,15 @@ async function films() {
   });
 }
 
-select.addEventListener("change", (e) => {
-  fetch(`https://ghibliapi.herokuapp.com/films/${e.target.value}`)
+select.addEventListener("change", (event) => {
+  fetch(`https://ghibliapi.herokuapp.com/films/${event.target.value}`)
     .then((response) => {
       return response.json();
     })
-    .then((currentMovie) => {
-      titleFilm.textContent = currentMovie.title;
-      releaseFilm.textContent = currentMovie.release_date;
-      descFilm.textContent = currentMovie.description;
+    .then((currentFilm) => {
+      titleFilm.textContent = currentFilm.title;
+      releaseFilm.textContent = currentFilm.release_date;
+      descFilm.textContent = currentFilm.description;
     });
 });
 
