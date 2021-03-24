@@ -17,25 +17,34 @@ form.addEventListener('submit', (e) => {
 
 async function getMovies () {
     const res = await axios.get("https://ghibliapi.herokuapp.com/films")
-    const apiResult = res.data.title
-    for (let list of apiResult) {
-        const movie = chooseMovie(list)
-        allMovies.appendChild(movie)
-        console.log(movie)
-    }
+    const apiResult = res.data
 
-    
+    apiResult.forEach(film => {
+        const movie = document.createElement("option")
+        allMovies.textContent = movie
+        allMovies.appendChild(movie)
+        console.log(film)
+
+    })
+
 }
 
 function chooseMovie(list) {
     const li = document.createElement("select")
+
+    const option = document.createElement('li')
+    option.innerText = list.title
+    li.appendChild(option)
+
 
     li.addEventListener("click", ()=> {
         const title = document.querySelector('#movie-title')
         const year = document.querySelector('#release-year')
         const description = document.querySelector('#description')
 
-        title.textContent = movie.title
+        title.textContent = film.data.title
+        year.textContent = movie.data.release_date
+        description.textContent = movie.data.description
 
     })
 
