@@ -1,0 +1,16 @@
+#display-info{
+    visibility:hidden;
+}
+body{
+    background-color: lavender;
+}
+h1{
+    font-family: monospace;
+}
+header{
+    background-color: rgb(135, 206, 235);
+    height: 150px;
+}
+img{
+    height: 150px;
+}
