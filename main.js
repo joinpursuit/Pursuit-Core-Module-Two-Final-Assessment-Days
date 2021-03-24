@@ -1,4 +1,27 @@
 const movieTitles = document.querySelector('select');
+const movieSelectOptions = document.querySelector('#movie-titles')
+const form = document.querySelector('#subReview form')
+const listing = document.querySelector('ul')
+const soloMovie= document.querySelector("#solo-movie")
+const movieYear= document.querySelector("#movie-year")
+const movieDescription= document.querySelector("#movie-description")
+const = document.querySelector()
+const = document.querySelector()
+
+
+
+
+// form.addEventListener('submit', (e) => {
+//     e.preventDefault()
+
+//     const reviews = document.querySelector('input[type="text]').value
+
+//     const  li = document.createElement('li')
+//     li.innerHTML = `<bold>${h3.textContent}</bold> ${reviews}`
+//     ul.appendChild(li)
+//     form.reset()
+// })
+
 
 
 // !Select feature
@@ -8,7 +31,7 @@ async function ghibliFilms() {
     const allMovies = movieResults.data
 
     for (let title of allMovies) {
-        
+
       filmData(title)
     }
 
@@ -17,8 +40,6 @@ async function ghibliFilms() {
         const titleNames = document.createElement('option')
         titleNames.textContent = ghibliTitle.title
         movieTitles.appendChild(titleNames)
-
-        const movieSelectOptions = document.querySelector('#movie-titles')
 
         movieSelectOptions.addEventListener('change', (e) => {
             e.preventDefault()
@@ -32,9 +53,17 @@ async function ghibliFilms() {
             describe.textContent = ghibliTitle.description
 
         })
+
+        // form.addEventListener('submit', () => {
+        //     e.preventDefault()
+        //     const input = document.querySelectorAll('input[type=text').value
+        //     const newti = document.createElement('li')
+        //     newti.innerHTML = `<b>${h3.textContent}: </bold> ${input}`
+        //     ul.appendChild(newti)
+        //     form.reset()
+        // })
     }
     // !End of Select Feature
-
 
 }
 ghibliFilms();
