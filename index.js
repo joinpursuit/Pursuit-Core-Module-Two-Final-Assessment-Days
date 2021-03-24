@@ -5,8 +5,11 @@ let form = document.querySelector("form")
 let ul = document.querySelector("ul")
 
 const getFilms = async () => {
+    
     try {
+        
         let res = await axios.get(`https://ghibliapi.herokuapp.com/films`)
+        
         res.data.forEach((el) => {
             let option = document.createElement("option")
             option.value = el.id
