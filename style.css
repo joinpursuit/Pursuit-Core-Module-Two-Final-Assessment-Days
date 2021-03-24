@@ -1,0 +1,22 @@
+body {
+    background-color: lavender;
+}
+
+header {
+    background-color: rgb(135, 206, 235);
+    height: 150px;
+    margin-bottom: 3em;
+}
+
+section #dispaly-info{
+    margin-top: em;
+}
+
+img {
+ height: 6em;
+}
+
+h1 {
+    display: flex;
+    font-family: monospace;
+}

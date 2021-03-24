@@ -8,9 +8,9 @@ async function ghibliFilms() {
     const allMovies = movieResults.data
 
     for (let title of allMovies) {
+        
       filmData(title)
     }
-
 
 
     function filmData (ghibliTitle) {
@@ -22,7 +22,6 @@ async function ghibliFilms() {
 
         movieSelectOptions.addEventListener('change', (e) => {
             e.preventDefault()
-
 
             const mt = document.querySelector('#display-info h3')
             const movieYear = document.querySelector('#display-info p:first-of-type')
