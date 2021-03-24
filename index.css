@@ -36,3 +36,7 @@ main {
 input[type = "text"] {
     width: 400px;
 }
+
+ul {
+    list-style-type: upper-roman;
+}

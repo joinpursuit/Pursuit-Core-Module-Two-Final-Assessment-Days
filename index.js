@@ -1,10 +1,9 @@
 const allMovies = document.querySelector("#select")
 const form = document.querySelector("form")
 const reviews = document.getElementById("reviewList")
-const title = document.querySelector("#display-info h3")
-const releaseYr = document.querySelector("#release-year")
-const selectedFilm = document.querySelector("#selected-film")
-
+// const title = document.querySelector("#display-info h3")
+// const releaseYr = document.querySelector("#release-year")
+// const selectedFilm = document.querySelector("#selected-film")
 // async function getMovies () {
 //     const res = await axios.get("https://ghibliapi.herokuapp.com/films")
 //     res.data.forEach(movie => {
@@ -27,20 +26,21 @@ async function getMovies () {
         }
         
     allMovies.addEventListener("change", () => {
-            let chosenMovie = allMovies.selectedIndex
+        let chosenMovie = allMovies.selectedIndex
 
-            const title = document.querySelector("#display-info h3")
-            title.textContent = apiResults[chosenMovie-1].title
-            const releaseYr = document.querySelector("#release-year")
-            releaseYr.innerHTML = `Released on: ${apiResults[chosenMovie-1].release_date}`
-            const selectedFilm = document.querySelector("#selected-film")
-            selectedFilm.innerHTML = `Description: ${apiResults[chosenMovie-1].description}`
+        const title = document.querySelector("#display-info h3")
+        title.textContent = apiResults[chosenMovie-1].title
+
+        const releaseYr = document.querySelector("#release-year")
+        releaseYr.innerHTML = `Released on: ${apiResults[chosenMovie-1].release_date}`
+            
+        const selectedFilm = document.querySelector("#selected-film")
+        selectedFilm.innerHTML = `Description: ${apiResults[chosenMovie-1].description}`
     })
 }
 
 // function movieSelection(movie) {
 //     const option = document.createElement("option")
-
 //     const movieTitle = document.createElement("p")
 //     movieTitle.textContent = movie.title
 //     movieTitle.classList.add("selection-options")
