@@ -1,0 +1,35 @@
+body {
+   background-color: lavender;
+   font-family: monospace;
+   display: flex;
+   flex-direction: column;
+}
+
+header {
+   background-color: skyblue;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 70%;
+   height: 150px;
+   padding: 10px;
+   margin-bottom: 30px;
+}
+
+div {
+   display: flex;
+   justify-content: center;
+}
+
+
+img {
+   height: 150px;
+}
+
+main {
+   width: 60%;
+}
+
+input {
+   width: 400px;
+}
