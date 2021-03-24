@@ -23,6 +23,7 @@ function addOptions(film){
         function selectOptions(){
             filmTitle.textContent = selectOption.value
             filmYear.textContent = film.release_date
+            filmDescription.textContent = film.description
         }
         selectOptions()
     });
