@@ -37,8 +37,5 @@ theForm.addEventListener("submit", (e)=>{
 })
 
 
-// li.innerHTML = `${title.textContent}: ${textInput.value}`;
-
-
 getFilms()
 
