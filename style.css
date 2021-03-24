@@ -1,0 +1,24 @@
+body {
+  font-family: monospace;
+  background-color: lavender;
+}
+
+header {
+  width: 70%;
+  height: 150px;
+  display: flex;
+  background-color: skyblue;
+}
+
+header > img {
+  height: 150px;
+}
+
+main {
+  width: 60%;
+  display: grid;
+}
+
+input[type="text"] {
+  width: 400px;
+}
