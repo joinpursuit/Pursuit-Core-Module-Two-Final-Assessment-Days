@@ -10,10 +10,7 @@ async function getStudioFilms() {
     try {
         const result = await axios.get('https://ghibliapi.herokuapp.com/films')
         const movieArr = result.data
-       
-        for (let movieInfo of movieArr) {
-            assignFilms(movieInfo)
-        }
+        movieArr.forEach(movieInfo => assignFilms(movieInfo))
 
     } catch(e) {
         console.log(e)
