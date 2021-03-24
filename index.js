@@ -9,6 +9,7 @@ const movieInput = document.querySelector('#movie-input')
 const movieName = document.querySelector('h3')
 const year = document.querySelector('#year')
 const description = document.querySelector('#description')
+const reviewList = document.querySelector('#review-list')
 
 const movieGrab = () => {
     axios.get('https://ghibliapi.herokuapp.com/films')
@@ -23,14 +24,12 @@ const movieGrab = () => {
         button.addEventListener('click', (e) => {
             e.preventDefault()
             movieName.textContent = movies.value
-            console.log(array)
-            //if movies.value === array[i].title {year.textContent = array[i].year}
-            // year.textContent = array
             for (let i = 0; i < array.length; i++) {
                 
                 if (movies.value === array[i].title) {
                     year.textContent = array[i].release_date
                     description.textContent = array[i].description
+                    //appendChild ul with li 
                 }
             }
         })
