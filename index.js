@@ -2,8 +2,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const response = await axios.get("https://ghibliapi.herokuapp.com/films")
     const films = response.data
     filmList = document.getElementById("film-selection-list")
-    // const emptyOption = document.createElement("li")
-    // filmList.appendChild(emptyOption)
     films.forEach((film, i) => {
         const option = document.createElement("option")
         option.textContent = film.title
