@@ -1,26 +1,23 @@
 const movieTitles = document.querySelector('select');
 const movieSelectOptions = document.querySelector('#movie-titles')
-const form = document.querySelector('#subReview form')
+const form = document.querySelector('#subReview')
 const listing = document.querySelector('ul')
 const soloMovie= document.querySelector("#solo-movie")
 const movieYear= document.querySelector("#movie-year")
 const movieDescription= document.querySelector("#movie-description")
-const = document.querySelector()
-const = document.querySelector()
 
 
 
 
-// form.addEventListener('submit', (e) => {
-//     e.preventDefault()
 
-//     const reviews = document.querySelector('input[type="text]').value
-
-//     const  li = document.createElement('li')
-//     li.innerHTML = `<bold>${h3.textContent}</bold> ${reviews}`
-//     ul.appendChild(li)
-//     form.reset()
-// })
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const input = document.querySelector("input[type=text]")
+    const list = document.createElement("li");
+    list.innerHTML = `<b>${titleFilm.textContent}:</b> ${input.value}`;
+    listing.appendChild(list);
+    form.reset();
+  });
 
 
 
@@ -30,40 +27,26 @@ async function ghibliFilms() {
 
     const allMovies = movieResults.data
 
-    for (let title of allMovies) {
+    allMovies.forEach((elem) => {
+        const option = document.createElement('option')
+        option.textContent = elem.title
+        option.value = elem.id
 
-      filmData(title)
-    }
-
-
-    function filmData (ghibliTitle) {
-        const titleNames = document.createElement('option')
-        titleNames.textContent = ghibliTitle.title
-        movieTitles.appendChild(titleNames)
-
-        movieSelectOptions.addEventListener('change', (e) => {
-            e.preventDefault()
-
-            const mt = document.querySelector('#display-info h3')
-            const movieYear = document.querySelector('#display-info p:first-of-type')
-            const describe = document.querySelector('#display-info p:last-of-type')
-
-            mt.textContent = ghibliTitle.title
-            movieYear.textContent = ghibliTitle.release_date
-            describe.textContent = ghibliTitle.description
-
-        })
-
-        // form.addEventListener('submit', () => {
-        //     e.preventDefault()
-        //     const input = document.querySelectorAll('input[type=text').value
-        //     const newti = document.createElement('li')
-        //     newti.innerHTML = `<b>${h3.textContent}: </bold> ${input}`
-        //     ul.appendChild(newti)
-        //     form.reset()
-        // })
-    }
-    // !End of Select Feature
-
+        movieTitles.appendChild(option)
+    })
 }
+
+movieTitles.addEventListener("change", (event) => {
+    fetch(`https://ghibliapi.herokuapp.com/films/${event.target.value}`)
+      .then((response) => {
+        return response.json();
+      })
+      .then((rMT) => {
+        soloMovie.textContent = rMT.title;
+        movieYear.textContent = rMT.release_date;
+        movieDescription.textContent = rMT.description;
+      });
+  });
+
+
 ghibliFilms();
