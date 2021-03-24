@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 2 Assessment</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./index.js"></script>
+</head>
+<body>
+    <header>
+        <img id="logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/c/ca/Studio_Ghibli_logo.svg/1200px-Studio_Ghibli_logo.svg.png">
+        <h1>Ghibli Review App</h1>
+    </header>
+    <main>
+        <section>
+            <select id="film-selection-list">
+                <option value="" selected disabled hidden></option>
+            </select>
+        </section>
+        <section id="display-info">
+            <p id="title"></p>
+            <p id="release-year"></p>
+            <p id="description"></p>
+        </section>
+        <section id="review-section" class="section-hide">
+            <form id="review-form">
+                <input type="text" id="review-message">
+                <input type="submit" value="Submit Review">
+            </form>
+            <ul id="movie-review"></ul>
+        </section>
+    </main>
+</body>
+</html>
