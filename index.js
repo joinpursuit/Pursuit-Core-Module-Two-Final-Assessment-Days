@@ -19,12 +19,20 @@ function addOptions(film){
     filmOptions.text = film.title
     filmOptions.value = film.title
     
+    selectOption.addEventListener("change", ()=>{
+        function selectOptions(){
+            filmTitle.textContent = selectOption.value
+            filmYear.textContent = film.release_date
+        }
+        selectOptions()
+    });
+    
     return filmOptions
 }
 
-selectOption.onchange = function addFilmTitle(){
-        filmTitle.textContent = selectOption.value
-}
+
+
+
 
 
 
