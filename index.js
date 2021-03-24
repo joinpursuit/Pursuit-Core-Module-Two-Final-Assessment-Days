@@ -32,8 +32,11 @@ theForm.addEventListener("submit", (e)=>{
     e.preventDefault()
     const textInput = document.querySelector("#text").value;
     const commentLi = document.createElement("li");
-    commentLi.innerHTML = `<strong>${filmTitle.textContent}</strong>: ${textInput}`
+    commentLi.innerHTML = `<strong>${filmTitle.textContent}:</strong> ${textInput}`
     commentUl.appendChild(commentLi)
+
+    const input = document.querySelector("input")
+    input.value = ""
 })
 
 
