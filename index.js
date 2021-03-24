@@ -27,7 +27,8 @@ select.addEventListener("change", async (event) => {
     
     try {
         let res = await axios.get(`https://ghibliapi.herokuapp.com/films/${event.target.value}`)
-
+        
+        section.innerText = ""
         let title = document.createElement("h3")
         let release  = document.createElement("p")
         let description  = document.createElement("p")
@@ -36,7 +37,6 @@ select.addEventListener("change", async (event) => {
         release.innerText = res.data.release_date
         description.innerText = res.data.description
     
-        section.innerText = ""
         
         section.appendChild(title)
         section.appendChild(release)
