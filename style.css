@@ -1,0 +1,31 @@
+#banner-pic {
+    height: 150px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: lavender;
+    font-family: monospace;
+    align-items: center;
+}
+
+
+header {
+    display: flex;
+    background-color:  skyblue;
+    height: 150px;
+    width: 70%;
+    margin-bottom: 30px;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+main {
+    width: 60%;
+    justify-content: left;
+}
+
+input[type='text']{
+    width: 400px;
+}
