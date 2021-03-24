@@ -1,0 +1,18 @@
+body {
+    background-color: lavender;
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: rgb(135, 206, 235);
+    height: 150px;
+}
+#logo {
+    height: 150px;
+}
+
+.section-hide {
+    display: none;
+}
