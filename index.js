@@ -27,3 +27,15 @@ movieTitles.addEventListener("change", async (event) => {
       releaseYear.textContent = res.data.release_date;
       description.textContent = res.data.description;
        });
+       form.addEventListener("submit", (event) => {
+        event.preventDefault();
+  
+        const li = document.createElement("li");
+        li.innerHTML = `${title.textContent}: ${textInput.value}`;
+        ul.appendChild(li);
+        
+      });
+
+     
+
+      
