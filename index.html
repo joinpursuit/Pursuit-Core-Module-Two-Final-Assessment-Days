@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio Ghibli</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="java.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="head-container">
+      <header class="header">
+        <div class="headimg">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/thumb/c/ca/Studio_Ghibli_logo.svg/1200px-Studio_Ghibli_logo.svg.png"
+            alt=""
+          />
+        </div>
+        <div class="head"><h1>Ghibli Review App</h1></div>
+      </header>
+    </div>
+    <br />
+
+    <div class="main-container">
+      <main class="main">
+        <div class="title-container">
+          <select id="select">
+            <option></option>
+          </select>
+        </div>
+        <br />
+        <div class="info-container">
+          <section id="display-info"></section>
+        </div>
+        <br />
+        <div class="form-container">
+          <form id="form">
+            <input autocomplete="off" type="text" id="input" />
+            <input type="submit" />
+            <button id="submit" type="submit">Submit Review</button>
+          </form>
+          <ul id="review"></ul>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
