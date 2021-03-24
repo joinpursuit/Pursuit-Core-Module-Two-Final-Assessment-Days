@@ -10,10 +10,15 @@
     <title>Document</title>
 </head>
 <body>
+    <header>
     <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/ca/Studio_Ghibli_logo.svg/1200px-Studio_Ghibli_logo.svg.png">
     <h1>Ghibli Review App</h1>
+    </header>
+    <main>
     <!-- select box that contains the title of each movie and default blank selction -->
-    <select></select>   
+    <select id="listItems">
+        <option disabled selected value></option>
+    </select>   
     <section id="display-info">
         <!-- title of movie -->
         <h3></h3>
@@ -24,10 +29,11 @@
     </section>   
     <form>
         <!-- alllows user to submit not save a review of that file. Submission should clear -->
-        <!-- <input>
-        <submit></submit> -->
+        <input type="text" id="innerText">
+        <input type="submit" id="review">
     </form> 
     <!-- contain the submit review -->
-    <ul></ul>  
+    <ul></ul> 
+    </main> 
  </body>
 </html>

@@ -1,9 +1,12 @@
 console.log("Good Luck on your test!");
-let select = document.querySelector("select");
+let select = document.querySelector("#listItems");
 let section = document.getElementById("display-info");
 let hThree = document.querySelector("h3");
 let releaseYearP = document.querySelector("p");
-let title = ''
+let ul = document.querySelector("ul");
+
+// let title = ''
+console.log(select.value + "hi")
 
 async function getTitle(e) {
     try{
@@ -13,6 +16,7 @@ async function getTitle(e) {
     for( let titles of list){
         // console.log(titles.title)
         const item= movieDetails(titles.title);
+        console.log(item)
     }
     } catch(err){console.log(err)}
 }
@@ -42,12 +46,17 @@ async function getDescription(e) {
 
 async function movieDetails(titles) {
     try{
+        // console.log(titles)
         let listOfMovieTitile = document.createElement("option")
         listOfMovieTitile.value= titles;
         listOfMovieTitile.text = titles;
         select.appendChild(listOfMovieTitile);
-            hThree.innerText = titles;
+            hThree.innerText = "select.value";
             section.appendChild(hThree);
+            // listOfMovieTitile.addEventListener("click", ()=>{
+            //     hThree.innerText = select.value;
+            //     section.appendChild(hThree);
+            // })
     }catch(err){console.log(err);}
 
     // return fileDescription
@@ -59,14 +68,34 @@ async function date(releaseDates){
         section.appendChild(releaseYearP);
     }catch(err){console.log(err)}
 }
-async function movieDescription (description) {
+async function movieDescription (descriptions) {
     try{
         let fileDescription = document.createElement("p")
-        fileDescription.textContent = description;
+        fileDescription.textContent = descriptions;
         releaseYearP.appendChild(fileDescription);
     }catch(err){console.log(err)}
 }
 
+
+
+    
 getTitle()
-// getDate()
-// getDescription()
+getDate()
+getDescription()
+let listOfMovieTitile = document.createElement("select.value")
+listOfMovieTitile.addEventListener("click", ()=>{
+    hThree.innerText = select.value;
+    section.appendChild(hThree);
+})
+
+// let userReview = document.getElementById("#review")
+// console.log(userReview)
+// userReview.addEventListener("click", submitReview)
+// function submitReview(){
+// let text = document.getElementById("#innerText")
+// let li = document.createElement("li")
+// writtenText = text.value;
+// li.textContent = writtenText;
+// ul.appendChild(li)
+
+// }
