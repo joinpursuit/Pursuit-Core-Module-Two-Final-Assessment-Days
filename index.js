@@ -17,11 +17,12 @@ const movieGrab = () => {
             const options = document.createElement('option')
             movies.appendChild(options)
             options.textContent = array[i].title
-            // console.log(options)
-            
-            
-        }        
-    }).catch(err =>(err))
+            options.value = i
+        }
+        console.log(movies)
+        
+    })
+    .catch(err => (err))
 }
 
 movieGrab()
