@@ -5,23 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="index.js"></script>
-    <title>Document</title>
+    <script src="index.js" defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Studio Ghibli</title>
 </head>
 <body>
     <header class= "header">
         <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/ca/Studio_Ghibli_logo.svg/1200px-Studio_Ghibli_logo.svg.png" alt=" Studio Ghibli logo">
         <h1>Ghibli Review App</h1>
     </header>
-    <select name="" id="">
+    <select name="" id="select">
         <option value="">--Please choose one of the following option--</option> 
     </select>
     <section id="display-info"></section>
-    <form action="">
+    <form id="form"action="">
         <input type="text">
-        <input type="submit" value="">
+        <input type="submit" value="Submit Review">
     </form>
     <h2>Reviews</h2>
-    <ul></ul>
+    <ul id="reviews"></ul>
 </body>
 </html>

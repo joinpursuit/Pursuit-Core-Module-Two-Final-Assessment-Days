@@ -19,7 +19,9 @@ body{
 .header > img{
     height: 150px;
 }
-
+#select:focus{
+    border-color: skyblue;
+}
 /* 
 To-DO
 review text input
