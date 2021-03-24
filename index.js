@@ -43,7 +43,7 @@ select.addEventListener("change", async (event) => {
     }
 })
 
-form.addEventListener("submit", async event => {
+form.addEventListener("submit", event => {
     event.preventDefault()
 
     let title = document.querySelector("h3")
