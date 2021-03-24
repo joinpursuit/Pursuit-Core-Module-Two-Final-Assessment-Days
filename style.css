@@ -1,0 +1,23 @@
+body{
+    background-color:lavender;
+}
+header{
+    background-color: rgb(135, 206, 235);
+    height: 150px;
+    width: fit-content;
+    margin: auto;
+    padding: 15px;
+}
+#Ghibli{
+  height: 150px;
+  margin-right: 250px;
+  
+}
+h1{
+    float: right;
+   margin-top: 100px;
+   font-family: monospace;
+}
+select{
+   margin-left: auto;
+}
