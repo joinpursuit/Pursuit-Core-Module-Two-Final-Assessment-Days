@@ -31,9 +31,9 @@ movieTitles.addEventListener("change", async (event) => {
         event.preventDefault();
   
         const li = document.createElement("li");
-        li.innerHTML = `${title.textContent}: ${textInput.value}`;
+        li.innerHTML = `<b>${title.textContent}:</b> ${textInput.value}`;
         ul.appendChild(li);
-        
+        textInput.value = ""
       });
 
      
