@@ -5,74 +5,68 @@
 //option value stored
 
 // in section
-//create h3(title), and release year (p), and description (p), within the section "#display-info" of single film
 //form allows users to submit (not save, just add to the frontend) a review of that film. On submission the input should clear.
 //upon submission new li appended to the ul: title(bold): review
 
-const select = document.querySelector("#filmTitles");
-const section = document.querySelector("#display-info");
+const selectBox = document.querySelector("#filmTitles");
+
 const form = document.querySelector("#form");
 
 const listReviews = document.querySelector("#reviews");
 
+//SECTIONBOX
+const section = document.querySelector("#display-info");
+const title = document.querySelector("#title");
+const releaseYear = document.querySelector("#release-year");
+const decription = document.querySelector("#release-year");
+
+
 async function getFilmTitles() {
   try {
-    const res = await axios.get(" https://ghibliapi.herokuapp.com/films/");
+    const res = await axios.get("https://ghibliapi.herokuapp.com/films/");
     const films = res.data;
-    for (let film of films) {
-      const selectOption = makeSelectOption(film);
-      select.appendChild(selectOption);
-    }
+    console.log(films);
+    makeOptions(films);
   } catch (error) {
     console.log(error);
   }
 }
 
-function makeSelectOption(film) {
-  const option = document.createElement("option");
-  option.textContent = film.title;
-  option.value = film.id;
-  select.appendChild(option);
+function makeOptions(films) {
+  for (let film of films) {
+    const option = document.createElement("option");
+    option.textContent = film.title;
+    option.id= `${film.release_date}`
+    option.value =`${film.description}`;
+    selectBox.appendChild(option);
+  }
+  selectBox.addEventListener("change", displayInfo)
+}
 
-  const title = document.createElement("h3");
-  const releaseYear = document.createElement("p");
-  const description = document.createElement("p");
-  title.textContent = film.title;
-  releaseYear.textContent = film["release_date"];
-  description.textContent = film.description;
+function displayInfo(event) {
+  const selectedOption = selectBox.options[selectBox.selectedIndex]
 
-  // console.log(title,releaseYear,description)
+  title.textContent = selectedOption.textContent
+  releaseYear.textContent = selectedOption.id
+  description.textContent = selectedOption.value
 
-  select.addEventListener("change", (e) => {
-    e.preventDefault();
-    section.textContent = "";
-
-
-    let target = e.target.value;
-    console.log(target);
-    // console.log(title,releaseYear,description)
-
-    section.appendChild(title);
-    section.appendChild(releaseYear);
-    section.appendChild(description);
-  });
-
-  return option;
+  section.appendChild(title)
+  section.appendChild(releaseYear)
+  section.appendChild(description)
 }
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  getFilmTitles();
-  const currentFilmTitle = document.querySelector("h3");
-  const comment = document.querySelector("input[type=text]").value;
-  const submit = document.querySelector("input[type=submit]");
+  const input = document.querySelector("input[type=text]");
+  const comment = input.value 
 
   const li = document.createElement("li");
-  li.innerHTML = `<strong>${currentFilmTitle}:</strong> ${comment}`;
+  li.innerHTML = `<strong>${title.textContent}:</strong> ${comment}`;
 
   listReviews.appendChild(li);
 
-  comment.value = "";
-  submit.value = "";
+  input.value = "";
+
 });
 getFilmTitles();
+
