@@ -1,0 +1,30 @@
+body {
+    font-family: monospace;
+    background-color: lavender;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  header {
+    width: 70%;
+    height: 150px;
+    margin-bottom: 30px;
+    padding: 10px;
+    background-color: skyblue;
+    display: flex;
+    justify-content: space-between;
+  }
+  h1 {
+    display: flex;
+    justify-content: center;
+  }
+  
+  main {
+    width: 60%;
+    flex-direction: column;
+    justify-content: left;
+  }
+  
+  ul {
+    width: 400px;
+  }
