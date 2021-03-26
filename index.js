@@ -10,6 +10,7 @@ const movieName = document.querySelector('h3')
 const year = document.querySelector('#year')
 const description = document.querySelector('#description')
 const reviewList = document.querySelector('#review-list')
+const reviewSubmit = document.querySelector('#review-submit')
 
 const movieGrab = () => {
     axios.get('https://ghibliapi.herokuapp.com/films')
@@ -29,10 +30,24 @@ const movieGrab = () => {
                 if (movies.value === array[i].title) {
                     year.textContent = array[i].release_date
                     description.textContent = array[i].description
-                    //appendChild ul with li 
+                    reviewSubmit.addEventListener('click', (e) => {
+                        e.preventDefault()
+                        const li = document.createElement('li')
+                        li.textContent = 
+                        reviewList.appendChild(li)
+            
+                    })
+                    
                 }
-            }
+            }            
         })
+        // reviewSubmit.addEventListener('click', (e) => {
+        //     e.preventDefault()
+        //     const li = document.createElement('li')
+        //     li.textContent = 
+        //     reviewList.appendChild(li)
+
+        // })
     })
     .catch(err => (err))
 }
