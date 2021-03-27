@@ -1,8 +1,3 @@
-//create option tags and append them to select tag
-//option tags should contain movie name
-//selecting movie name should fill h3 
-//h3 p1 should have the year of the movie name
-//h3 p2 should have the movie description
 const movies = document.querySelector('#movies')
 const button = document.querySelector('#movie-input')
 const movieInput = document.querySelector('#movie-input')
@@ -16,8 +11,9 @@ const reviewSubmit = document.querySelector('#review-submit')
 const movieGrab = () => {
     axios.get('https://ghibliapi.herokuapp.com/films')
     .then(response => {
-        const array = response.data
-        for (let i = 0; i < array.length; i++) {            
+        const array = response.data        
+        for (let i = 0; i < array.length; i++) {
+        
             const options = document.createElement('option')
             movies.appendChild(options)
             options.textContent = array[i].title
@@ -26,28 +22,18 @@ const movieGrab = () => {
         button.addEventListener('click', (e) => {
             e.preventDefault()
             movieName.textContent = movies.value
-            for (let i = 0; i < array.length; i++) {
-                
+            for (let i = 0; i < array.length; i++) {                
                 if (movies.value === array[i].title) {
                     year.textContent = array[i].release_date
-                    description.textContent = array[i].description
-                    // reviewSubmit.addEventListener('click', (e) => {
-                    //     e.preventDefault()
-                    //     const li = document.createElement('li')
-                    //     li.textContent = 
-                    //     reviewList.appendChild(li)            
-                    // })                    
+                    description.textContent = array[i].description                    
                 }
             }            
         })
         reviewSubmit.addEventListener('click', (e) => {
             e.preventDefault()
-            const li = document.createElement('li')
-            console.log(movieName.textContent)
-            console.log(reviewInput)
+            const li = document.createElement('li')            
             li.textContent = `${movieName.textContent}: ${reviewInput.value}`
             reviewList.appendChild(li)
-
         })
     })
     .catch(err => (err))
