@@ -44,7 +44,8 @@ const movieGrab = () => {
             e.preventDefault()
             const li = document.createElement('li')
             console.log(movieName.textContent)
-            li.textContent = `${movieName.textContent}: `
+            console.log(reviewInput)
+            li.textContent = `${movieName.textContent}: ${reviewInput.value}`
             reviewList.appendChild(li)
 
         })
