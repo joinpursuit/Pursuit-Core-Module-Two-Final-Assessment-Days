@@ -16,16 +16,21 @@ body {
     margin: 10px;
     margin-bottom: 30px;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-
+    flex-direction: row;    
+    justify-content: space-between;
     background-color: skyblue;
 }
 
 #header h1 {
-    
+    align-self: center; 
 }
 
 #header img {
     height: 150px;
+}
+
+#display-info {
+    width: 60%;
+    display: grid;
+    grid-template-columns: auto;
 }
