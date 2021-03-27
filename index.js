@@ -10,6 +10,7 @@ const movieName = document.querySelector('h3')
 const year = document.querySelector('#year')
 const description = document.querySelector('#description')
 const reviewList = document.querySelector('#review-list')
+const reviewInput = document.querySelector('#review-input')
 const reviewSubmit = document.querySelector('#review-submit')
 
 const movieGrab = () => {
@@ -30,24 +31,23 @@ const movieGrab = () => {
                 if (movies.value === array[i].title) {
                     year.textContent = array[i].release_date
                     description.textContent = array[i].description
-                    reviewSubmit.addEventListener('click', (e) => {
-                        e.preventDefault()
-                        const li = document.createElement('li')
-                        li.textContent = 
-                        reviewList.appendChild(li)
-            
-                    })
-                    
+                    // reviewSubmit.addEventListener('click', (e) => {
+                    //     e.preventDefault()
+                    //     const li = document.createElement('li')
+                    //     li.textContent = 
+                    //     reviewList.appendChild(li)            
+                    // })                    
                 }
             }            
         })
-        // reviewSubmit.addEventListener('click', (e) => {
-        //     e.preventDefault()
-        //     const li = document.createElement('li')
-        //     li.textContent = 
-        //     reviewList.appendChild(li)
+        reviewSubmit.addEventListener('click', (e) => {
+            e.preventDefault()
+            const li = document.createElement('li')
+            console.log(movieName.textContent)
+            li.textContent = `${movieName.textContent}: `
+            reviewList.appendChild(li)
 
-        // })
+        })
     })
     .catch(err => (err))
 }
