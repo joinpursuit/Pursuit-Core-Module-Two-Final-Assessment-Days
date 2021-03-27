@@ -32,7 +32,7 @@ const movieGrab = () => {
         reviewSubmit.addEventListener('click', (e) => {
             e.preventDefault()
             const li = document.createElement('li')            
-            li.textContent = `${movieName.textContent}: ${reviewInput.value}`
+            li.innerHTML = `<strong>${movieName.textContent}</strong>: ${reviewInput.value}`
             reviewList.appendChild(li)
         })
     })
