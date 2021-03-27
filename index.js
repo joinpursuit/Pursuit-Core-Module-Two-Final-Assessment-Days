@@ -1,7 +1,3 @@
-document.querySelector("form").addEventListener("DOMContentLoaded", (e)=>{
-    e.preventDefault();
-});
-
 const url = "https://ghibliapi.herokuapp.com/films";
 const moviesTitles = document.querySelector("#moviesTitles");
 const reviewTextBox = document.querySelector("#reviewText");
