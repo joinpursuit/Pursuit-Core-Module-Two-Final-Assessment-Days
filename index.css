@@ -1,0 +1,32 @@
+body {
+    font-family: monospace;
+    background-color: lavender;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 70%;
+    height: 150px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 10px;
+    background-color: skyblue;
+}
+
+img {
+    height: 150px;
+}
+
+#main-area {
+    width: 60%;
+    justify-content: left;
+}
+
+ul {
+    width: 400px;
+}
