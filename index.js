@@ -20,7 +20,7 @@ loadMovies();
 const getMovie = () => {
     document.querySelector("#display-info h3").innerHTML = "";
     let selectedMovie = 
-    moviesTitles.options[moviesTitles.selectedIndex].text;
+    moviesTitles.value;
     document.querySelector("#display-info h3").innerHTML = selectedMovie;
     return selectedMovie; 
     
@@ -49,7 +49,7 @@ const submitReview = () => {
     let list = document.querySelector("#reviewList");
     let listItem = document.createElement("li");
     listItem.innerHTML = "<strong>"
-    +moviesTitles.options[moviesTitles.selectedIndex].text+": </strong>"+reviewText;
+    +moviesTitles.value+": </strong>"+reviewText;
     list.appendChild(listItem);
 }
 
