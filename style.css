@@ -1,13 +1,20 @@
 body {
   font-family: monospace;
   background-color: lavender;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header {
   width: 70%;
   height: 150px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: skyblue;
+  margin: 30px;
+  padding: 10px;
 }
 
 header > img {
@@ -16,7 +23,9 @@ header > img {
 
 main {
   width: 60%;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 input[type="text"] {
