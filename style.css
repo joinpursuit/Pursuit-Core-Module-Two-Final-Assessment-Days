@@ -1,0 +1,17 @@
+body {
+  background-color: lavender;
+  font-family: monospace;
+}
+
+header {
+  background-color: skyblue;
+  width: 70%;
+  height: 150px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+header img {
+  max-width: 100%;
+}
