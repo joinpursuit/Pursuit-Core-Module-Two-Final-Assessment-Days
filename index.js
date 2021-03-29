@@ -31,16 +31,6 @@ const movieGrab = () => {
                 }
             }
         })
-        // button.addEventListener('click', (e) => {
-        //     e.preventDefault()
-        //     movieName.textContent = movies.value
-        //     for (let i = 0; i < array.length; i++) {                
-        //         if (movies.value === array[i].title) {
-        //             year.textContent = array[i].release_date
-        //             description.textContent = array[i].description                    
-        //         }
-        //     }            
-        // })
         reviewSubmit.addEventListener('click', (e) => {
             e.preventDefault()
             const li = document.createElement('li')            
