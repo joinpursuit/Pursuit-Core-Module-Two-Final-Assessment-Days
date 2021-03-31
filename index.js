@@ -30,9 +30,6 @@ async function getMovieObj(e) {
             option.value = i
             option.textContent= titles[i].title
             select.appendChild(option)
-            
-           
-
         }
          
 }
@@ -51,11 +48,14 @@ submit.addEventListener('click', (e)=>{
     e.preventDefault()
     let li = document.createElement("li");
     let ul = document.querySelector("ul");
-    console.log(select.name.value)
-   li.innerHTML= `<b>  ${select.selectedOptions.label} ${insideText.value}</b>`;
-   console.log(select.selectedOptions)
+    let movSelect = document.getElementById("listItems")
+    let collection = movSelect.options[movSelect.selectedIndex].text;
+   li.innerHTML=`<b>${collection}. ${insideText.value}</b>`;
+   console.log(collection)
    ul.appendChild(li)
-
+   insideText.innerText = "";
+   let form = document.getElementById("myForm")
+   form.reset();
 })
 
     
