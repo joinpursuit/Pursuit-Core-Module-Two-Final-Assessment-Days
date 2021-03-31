@@ -16,7 +16,7 @@
     </header>
     <main>
     <!-- select box that contains the title of each movie and default blank selction -->
-    <select id="listItems">
+    <select id="listItems" name="movies">
         <option disabled selected value></option>
     </select>   
     <section id="display-info">
@@ -25,7 +25,7 @@
         <!-- year of release -->
         <p></p>
         <!-- description of the selected film -->
-        <p></p>
+        <p id="description"></p>
     </section>   
     <form>
         <!-- alllows user to submit not save a review of that file. Submission should clear -->
@@ -33,7 +33,9 @@
         <input type="submit" id="review">
     </form> 
     <!-- contain the submit review -->
-    <ul></ul> 
+    <form>
+    <ul></ul>
+    </form>
     </main> 
  </body>
 </html>
