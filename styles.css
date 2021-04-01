@@ -1,0 +1,29 @@
+body {
+    font-family: monospace;
+    background-color: lavender;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: skyblue;
+    width: 70%;
+    height: 150%;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+header img {
+    height: 150px;
+}
+
+main {
+    width: 60%;
+    justify-content: left;
+    margin: auto;
+}
+
+input[type=text] {
+    width: 400px;
+}
