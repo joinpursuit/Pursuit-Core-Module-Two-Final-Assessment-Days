@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let form = document.getElementById("form");
   form.addEventListener("submit", (e) => {
     e.preventDefault();
+    form.reset();
   });
 });
 
@@ -16,7 +17,7 @@ const getFilms = async () => {
   let description = document.createElement("p");
   let ul = document.getElementById("review");
   let input = document.getElementById("input");
-  console.log(data);
+  let button = document.getElementById("submit");
   data.forEach((film) => {
     let option = document.createElement("option");
     option.textContent = film.title;
@@ -35,15 +36,16 @@ const getFilms = async () => {
         description.textContent = film.description;
         section.appendChild(description);
       }
-      if (film.title === event.target.value) {
+    });
+  });
+  button.addEventListener("click", () => {
+    data.forEach((film) => {
+      if (film.title === select.value) {
         let li = document.createElement("li");
         let p = document.createElement("p");
-        let p1 = document.createElement("p");
-        p.className = "bold";
-        p.textContent = `${film.title}: `;
-        p1.textContent = input.value;
+        let str = film.title;
+        p.innerHTML = `<strong>${str}:</strong> ${input.value}`;
         li.appendChild(p);
-        li.appendChild(p1);
         ul.appendChild(li);
       }
     });
