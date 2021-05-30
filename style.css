@@ -1,0 +1,29 @@
+body{
+    font-family: monospace;
+    background-color: lavender;
+    border: 2px solid black;
+
+}
+
+header{
+   align-items: center;
+   width: 70%;
+   height: 150px;
+   margin-bottom: 30px;
+   padding: 10px;
+   background-color: skyblue;
+   border: 2px solid black;
+}
+img{
+    width: 70%;
+    height: 150px;  
+}
+
+h1{
+   
+}
+main{
+    width: 60%;
+    /* display: flex; */
+    justify-content: left;
+}
